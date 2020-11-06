@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
   state = {
@@ -97,6 +97,7 @@ persons[personIndex] = person;
 
 
     return (
+      <StyleRoot>
       <div className='App'>
         <h1>Hi, I am a React App, hi</h1>
         <p className={classes.join(' ')}> This is really working</p>
@@ -105,6 +106,7 @@ persons[personIndex] = person;
         onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
+      </StyleRoot>
     );
     // return React.createElement(
     //   'div',
