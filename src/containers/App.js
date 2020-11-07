@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 // import './App.css';
-import Person from './Person/Person';
+import Person from '../components/Persons/Person/Person';
 
 class App extends Component {
   state = {
@@ -68,20 +68,16 @@ persons[personIndex] = person;
 
 
     const assignedClasses = [];
-    // let assignedClasses = ['red', 'bold'].join(' ');
 
     if(this.state.persons.length <= 2){
-      assignedClasses.push(classes.red); // assignedClasses = ['red']
+      assignedClasses.push(classes.red);
     }
 
     if(this.state.persons.length <= 1){
-      assignedClasses.push(classes.bold) // assignedClasses = ['red', 'bold']
+      assignedClasses.push(classes.bold);
     }
 
-
-
     return (
-      
       <div className={classes.App}>
         <h1>Hi, I am a React App, hi</h1>
         <p className={assignedClasses.join(' ')}> This is really working</p>
@@ -91,11 +87,6 @@ persons[personIndex] = person;
       </div>
       
     );
-    // return React.createElement(
-    //   'div',
-    //   null,
-    //   React.createElement('h1', { className: 'App' }, 'Does this work now?')
-    // );
   }
 }
 
