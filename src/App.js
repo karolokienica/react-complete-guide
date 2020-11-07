@@ -46,20 +46,8 @@ persons[personIndex] = person;
     }
 
   render() {
-    const style={
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    };
-
     let persons = null;
+    let btnClass = '';
 
     if(this.state.showPersons){
       persons = (
@@ -75,11 +63,7 @@ persons[personIndex] = person;
         </div> 
       );
 
-      // style.backgroundColor = 'red';
-      // style[':hover'] = {
-      //   backgroundColor: 'salmon',
-      //   color: 'black'
-      // }
+      btnClass = classes.Red;;
     }
 
 
@@ -101,7 +85,7 @@ persons[personIndex] = person;
       <div className={classes.App}>
         <h1>Hi, I am a React App, hi</h1>
         <p className={assignedClasses.join(' ')}> This is really working</p>
-        <button className={classes.Button}
+        <button className={btnClass}
         onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
